@@ -47,7 +47,7 @@
             <li>JavaScript</li>
             <li>Vue</li>
           </ul></li>
-          <li  ><a href="#siteWork">作品</a>
+          <li  ><a  href="#siteWork">作品</a>
           <ul  class="submenu ">
             <li>作品1</li>
             <li>作品2</li>
@@ -72,7 +72,7 @@
     </div>
    
     <main>
-      <div data-x id="siteAbout" class="usercard">
+      <div id="siteAbout" class="usercard">
         <div class="pictureAndText clearfix">
           <div class="picture">
             <img src="./img/avatar.jpg" alt="头像" >
@@ -130,7 +130,7 @@
       </p>
 
     </main>
-    <section data-x id="siteSkill" class="skills">
+    <section id="siteSkill" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -171,7 +171,7 @@
         </li>
       </ol>
     </section>
-    <section data-x  id="siteWork" class="protfolio">
+    <section id="siteWork" class="protfolio">
       <h2>作品集</h2>
       <nav>
           <ol class="clearfix">
@@ -213,16 +213,7 @@
   <script>
     setTimeout(function(){    //指定时间后调用函数
     siteWelcome.classList.remove('active');
-    },100)
-    
-    let specialTags = document.querySelectorAll('[data-x]')
-    for (let i = 0; i < specialTags.length; i++) {
-      specialTags[i].classList.add('offset')
-    }
-
-    setTimeout(function(){
-      yyy()
-    },100)
+    },1000)
     
     window.onscroll = function(){   //滚动时触发
       if(window.scrollY >150){
@@ -230,36 +221,7 @@
       }else{
         topNavBar.classList.remove('sticky')
       }
-      yyy()
-      }
-
-      function yyy(){
-        let specialTags = document.querySelectorAll('[data-x]')
-      let minIndex = 0    //设置最小值窗口离顶部最近的元素
-      for (let i = 1; i < specialTags.length; i++) {    //遍历
-        if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-          minIndex= i
-        //console.log(minIndex)
-        }
-      }
-      specialTags[minIndex].classList.remove('offset')
-      for (let i = 0; i < specialTags.length; i++){   //遍历,清除
-        specialTags[i].classList.remove('highlight')
-      }
-      specialTags[minIndex].classList.add('highlight')
-
-      let id = specialTags[minIndex].id
-      //console.log(id)
-      let a = document.querySelector('a[href="#'+ id + '"]')  //href not write error
-      let li = a.parentNode
-      let bortherAndMe = li.parentNode.children
-      for (let i = 0; i < bortherAndMe.length; i++){
-        bortherAndMe[i].classList.remove('highlight')
-      }
-        li.classList.add('highlight')
-      }
-      
-    
+    }
 
     let liTags = document.querySelectorAll('nav.menu > ul >li')    //查询选择器所有
     for(let i=0; i<liTags.length;i++) {
@@ -273,33 +235,30 @@
     }
     
     let aTags = document.querySelectorAll('nav.menu > ul >li>a')
-      function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-      }
-      requestAnimationFrame(animate);
     for(let i=0; i<aTags.length;i++) {
       aTags[i].onclick = function(x){
-        x.preventDefault()                //阻止原本作用
+        x.preventDefault()                 //阻止原本作用
        // let a = x.currentTarget
        // let href = a.getAttribute('href')  //'#siteAboutb'
        // let element = document.querySelector(href)
        // let top = element.offsetTop        //元素顶边(页面顶部)
         let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
         
+        let n = 25
+        let t = 500/n
         let currentTop = window.scrollY
         let targetTop = top - 80
-        let s = (targetTop-currentTop)
-        let t = Math.abs((s/100)*400)
-        if(t>500){t = 500} 
-        var coords = { y: currentTop }; // Start at (0, 0)
-        var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-          .to({ y: targetTop }, t) // Move to (300, 200) in 1 second.
-          .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
-          .onUpdate(function () { // Called after tween.js updates 'coords'.
-          window.scrollTo(0,coords.y)
-          })
-          .start();
-      }}
+        let distance = (targetTop-currentTop)/n
+        var i = 0
+        let id = setInterval(()=> {
+          if(i===n){
+            window.clearInterval(id)  //解除计时器
+            return
+          }
+          i = i+1
+          window.scrollTo(0,currentTop + distance*i )
+        },t)
+      }
+    }
 </script>
 </html>

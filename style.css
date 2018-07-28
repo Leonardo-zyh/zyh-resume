@@ -32,7 +32,7 @@ a {
 
 }
 .topNavBar.sticky{
-  background: rgba(223, 226, 228, 0.9);  /*rgba(217,224,230,0.8)*/
+  background: rgba(255, 255, 255, 0.8);  /*rgba(217,224,230,0.8)*/
   padding: 10px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
   color: #3d4451;
@@ -68,7 +68,8 @@ a {
   display: block;
   position: relative;
 }
-.topNavBar  nav > ul > li.active > a::after{
+.topNavBar  nav > ul > li.active > a::after,
+.topNavBar  nav > ul > li.highlight > a::after{
   content: '';
   position: absolute;
   display: block;
@@ -77,12 +78,20 @@ a {
   width:100%;
   height: 3px;
   background: #e06567;
-  animation: moveRight 0.5s;
+  animation: moveRight 0.7s;
 }
 @keyframes moveRight{
   0%{width:0;}
   100%{width:100%}
 }
+[data-x].offset{
+  transform: translateY(200px)
+}
+[data-x]{
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
 .topNavBar .submenu{
   display: none;
   position: absolute;
@@ -291,14 +300,21 @@ body main{
     background-color: #fae1e1;
     border-radius:2px;
     margin: 4px 0 40px;
+    overflow: hidden;   /*溢出隐藏*/
   }
   .skills ol li .progress .progress-inner{
     height: 100%;
     width: 70%;
     border-radius:2px;
     background-color: #e6686a;
+    transform: translateX(0);
+    transition: all 1s;
   }
-  .protfolio{
+  .skills.offset .progress .progress-inner{
+    transform: translateX(-100%)
+  }
+
+  .protfolio {
     text-align: center;
     max-width: 940px;
     margin-top: 60px;
@@ -370,3 +386,4 @@ body main{
     top: 312px;
     left:645px;
   }
+
