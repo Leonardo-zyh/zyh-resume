@@ -101,7 +101,7 @@ a {
   background-color:white;
   color: #3d4451;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .topNavBar li.active .submenu{
   display: block;
