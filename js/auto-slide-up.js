@@ -8,13 +8,7 @@
     window.addEventListener('scroll', function (x) {
         findCloseRemoveOffset()
     })
-    window.addEventListener('scroll', function (x) {
-        if (window.scrollY > 150) {
-            topNavBar.classList.add('sticky')
-        } else {
-            topNavBar.classList.remove('sticky')
-        }
-    })
+   
 
     /*helper*/
     function findCloseRemoveOffset() {
