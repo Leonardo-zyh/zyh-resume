@@ -10,9 +10,15 @@ body {
   font-weight: normal;
   list-style: none
 }
-a {
-  
+a {  
   text-decoration: none;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 .clearfix::after {
   content: '';
@@ -270,7 +276,8 @@ body main{
   
   }
   .skills h2,
-  .protfolio h2{
+  .protfolio h2,
+  .messsage h2{
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -381,18 +388,7 @@ body main{
     margin-top: 5px;
     transition: all 0.3s
   }
-  .protfolio>nav .bar.state-1 .bar-inner{
-    margin-left: 0;
-    width: 35px;
-  }
-  .protfolio>nav .bar.state-2 .bar-inner{
-    margin-left: 72px;
-    width: 35px;
-  }
-  .protfolio>nav .bar.state-3 .bar-inner{
-    margin-left: 145px;
-    width: 90px;
-  }
+
   section .works{
       position: relative;
   }
@@ -412,4 +408,26 @@ body main{
     top: 312px;
     left:645px;
   }
+
+
+
+  .messsage{
+    max-width: 800px;
+    margin: 70px auto;
+  }
+  .messsage ol {
+    background-color: #f4f4f4;
+    /*box-shadow: 0 0 1px darkgray;*/
+
+  }
+  .messsage ol>li{
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+  }
+  .messsage form{
+    margin: 30px 10px;
+  }
+
+
+
 

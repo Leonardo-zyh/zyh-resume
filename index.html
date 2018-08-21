@@ -177,37 +177,48 @@
     </section>
     <section data-x id="siteWork" class="protfolio">
         <h2>作品集</h2>
+        <div id="mySlides">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/nav-page.jpg" class="swiper-slide">
+                    <img src="./img/canvas.jpg" class="swiper-slide">
+                    <img src="./img/apple-style-slides.jpg" class="swiper-slide">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
+                <!-- If we need navigation buttons -->
 
-
-        <!-- Slider main container -->
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src="./img/nav-page.jpg" class="swiper-slide">
-                <img src="./img/canvas.jpg" class="swiper-slide">
-                <img src="./img/apple-style-slides.jpg" class="swiper-slide">
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
 
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
     </section>
+    <section class="messsage">
+        <h2>留言板</h2>
+        <ol id="messageList"></ol>
+        <form id="postMessageForm">
+            <label for="">姓名</label>
+            <input type="text" name="name">
+            <label for="">内容</label>
+            <input type="text" name="content">
+            <input type="submit" value="提交"">
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+    <!-- 存储服务 -->
+    <!-- 模块化 -->
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/message.js"></script>
 </body>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
-<script src="./js/init-swiper.js"></script>
-<script src="./js/auto-slide-up.js"></script>
-<script src="./js/sticky-topbar.js"></script>
-<script src="./js/smoothly-navigation.js"></script>
-
 
 </html>
