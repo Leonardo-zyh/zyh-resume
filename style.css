@@ -278,7 +278,7 @@ body main{
   }
   .skills h2,
   .protfolio h2,
-  .messsage h2{
+  .message h2{
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -335,6 +335,7 @@ body main{
   .protfolio  .swiper-container {
     width: 800px;
     height: 600px; 
+    cursor: pointer;
   }
   .protfolio .swiper-button-prev{
     background-color: white;
