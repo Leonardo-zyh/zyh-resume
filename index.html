@@ -199,10 +199,11 @@
         <h2>留言板</h2>
         <ol id="messageList"></ol>
         <form id="postMessageForm">
-            <label for="">姓名</label>
-            <input type="text" class="text" name="name">
+            <div id="sorry" class="sorry">内容不能为空！</div>
+            <label for="">姓名</label>            
+            <input type="text" class="text" data-a name="name" autocomplete="off" >
             <label for="">内容</label>
-            <input type="text" class="text" name="content">
+            <input type="text" class="text" data-b name="content" autocomplete="off" >
             <input type="submit" class="submit" value="提交留言">
         </form>
     </section>

@@ -21,7 +21,7 @@
           this.messageList.appendChild(li)
         })
       }, function (error) {
-        alert(提交失败)// 异常处理
+        alert('提交失败')// 异常处理
         
       })
 
@@ -37,6 +37,24 @@
       let myForm = this.form
       let content = myForm.querySelector('input[name=content]').value
       let name = myForm.querySelector('input[name=name]').value
+      var sorry = document.querySelector('#sorry')
+      //内容不能为空提示
+      if(name==='' || content===''){
+        //confirm('内容不能为空')
+        sorry.classList.remove('sorry')
+        sorry.classList.add('inputSorry')
+        if(name===''){
+          document.querySelector('[data-a]').classList.add('textRemind')
+        }else(document.querySelector('[data-a]').classList.remove('textRemind'))
+        if (content===''){
+          document.querySelector('[data-b]').classList.add('textRemind')
+        }else(document.querySelector('[data-b]').classList.remove('textRemind'))
+        preventDefault()
+      }else{
+        sorry.classList.add('sorry')
+        document.querySelector('[data-a]').classList.remove('textRemind')
+        document.querySelector('[data-b]').classList.remove('textRemind')
+      }
       this.model.save({
         'name':name,'content':content,
       }).then(function (object) {
