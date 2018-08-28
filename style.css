@@ -453,6 +453,12 @@ body main{
     transition: all 0.2s;
     padding: 2px 5px;
     border-radius: 2px;
+    outline: none;
+  }
+  .message .submit:focus{
+    color: #da0f47;
+    border-color: #df104a;
+    background-color: rgba(250, 5, 5, 0.05);
   }
   .message .submit:hover{
     color: #da0f47;
@@ -466,7 +472,7 @@ body main{
     display: block;
     margin-bottom: 10px
   }
-  .message .textRemind{
+  .message .text.textRemind{
     border: 1.2px solid rgba(255, 0, 0, 0.5);
     padding: 4px 0 3px 4px;
   }
